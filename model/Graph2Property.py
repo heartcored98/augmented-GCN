@@ -36,7 +36,7 @@ class Graph2Property():
         if (self.FLAGS.readout == 'atomwise' ):
             self.Z, self._P = blocks.readout_atomwise(self._X, latent_dim)
         elif (self.FLAGS.readout == 'graph_gather' ):
-            self.Z, self._P = blocks.readout_atomwise(self.X, self._X, latent_dim)
+            self.Z, self._P = blocks.readout_graph_gather(self.X, self._X, latent_dim)
 
         self.loss = self.calLoss(self.P, self._P)
 
